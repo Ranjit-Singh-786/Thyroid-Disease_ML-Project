@@ -1,0 +1,22 @@
+* {
+    margin:0px;
+    padding:0px;
+}
+body{
+    font-family: sans-serif;
+    
+}
+
+body{
+    /* background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url(plant.jpg); */
+    height:100vh;
+    background-color: rgb(46, 233, 208);
+    background-size:cover;
+    background-attachment: fixed;
+    
+}
+table, td {
+    border: 1px solid black;
+    border-radius: 15px;
+    text-align: center;
+  }
