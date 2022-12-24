@@ -1,7 +1,11 @@
 from flask import Flask,render_template,url_for,request,jsonify
 import numpy as np
 import joblib
-
+import logging
+import warnings
+warnings.filterwarnings('ignore')
+formt = "%(lineno)d--%(name)s--%(asctime)s--%(levelname)s--%(message)s"
+logging.basicConfig(filename='applog.log',level=logging.INFO , format=formt)
 # load the model
 minmax_scaler = joblib.load('models\preprocess_Model\minmax_scaler.scl')
 model = joblib.load('models\ML_models\Decision_Tree96.lb')
@@ -9,14 +13,17 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return render_template('index.html')
+    logging.info('successfully render the homepage')
 
 @app.route('/predict')
 def predict():
     return render_template('home.html')
+    logging.info('successfully render the prediction form')
 
 @app.route('/result' , methods=['POST'])
 def result():
     if request.method == 'POST':
+        logging.info('requesting the input')
         age = float(request.form["age"])
         sex = int(request.form["sex"])
         tsh = float(request.form["TSH"])
@@ -30,6 +37,7 @@ def result():
         psych = int(request.form["psych"])
         on_thyroxine = int(request.form["thyroxine"])
         sick = int(request.form["sick"])
+        logging.info('input inserted successfully')
         # scaled the features
         scaled = minmax_scaler.transform(np.array([[age,tsh,0,0,0,fti]]))
         age = scaled[0][0]
@@ -39,6 +47,7 @@ def result():
         data = [[age,sex,tsh,TSH_measured,pregnant,
             TT4_measured,T4U_measured,
             fti,fti_measured,I131_treatment,psych,on_thyroxine,sick]]
+        logging.info('successfully scaled the inputs')
         # do the prediction
         data = np.array(data)
         prediction = model.predict(data)
@@ -50,7 +59,14 @@ def result():
             data = 'Hypothyroidism'
         else:
             data ="Hyperthyroidism"
-        return render_template('prediction.html' ,pred = data )
+        
+        try:
+            logging.info('rendering the prediction')
+            return render_template('prediction.html' ,pred = data )
+            logging.info('successfully render the prediction')
+        except Exception as e:
+            logging.error(e)
+            logging.info('error occured in during prediction rendering')
 
 if __name__ =="__main__":
     app.run(debug=True)

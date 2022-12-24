@@ -29,3 +29,13 @@ h1 {
   h6{
     margin-top: 30px;
   }
+#btn{
+  width: 200px;
+  font-size: 17px;
+  height: 30px;
+  border-radius: 10px;
+  color: rgb(41, 127, 226);
+}
+#btn:hover{
+  font-size: 18px;
+}
