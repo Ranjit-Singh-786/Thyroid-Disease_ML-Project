@@ -9,36 +9,38 @@
 <body>
     <form action="{{url_for('result')}}" method="post">
 <center>
-    	<h1>
-            <u>Thyroid Disease Detection</u>
-            
-        </h1>
+  <h1>
+    <u>Thyroid Disease Detection</u>
+    
+</h1>
 
         <table style="width:70%">
-            <tr style="height:70px">
+       
+            <!-- <tr style="height:70px">
               <th>first fill here</th>
               <th>second</th>
                 
-            </tr>
+            </tr> -->
             <tr style="height:70px">
               <td><label for="age" class="label">Age :</label>
-                <input type="text" class="text" name="age" id="age" placeholder="Enter Age"> </td>
+                <input type="text" class="text" name="age" id="age" placeholder="Enter Age" required = 'required'> </td>
+
               <td><label  class="label">Sex :</label>
-                Female <input type="radio"  name="sex" value ="0">
-                Male <input type="radio"  name="sex" value="1"></td>
+                Female <input type="radio"  name="sex" value ="0" required = 'required'>
+                Male <input type="radio"  name="sex" value="1" required = 'required'></td>
             
             </tr>
 
 
             <tr style="height:70px">
               <td><label for="TSH" class="label" >TSH :</label> 
-                <input type="text" class="text" name="TSH" id="TSH" placeholder="Enter TSH" >
+                <input type="text" class="text" name="TSH" id="TSH" placeholder="Enter TSH" required = 'required'>
             </td>
 
               <td>                    <label class="label">TSH measured :</label> 
 
-                False <input type="radio"  name="TSH_measured" value ="0" id="FalseTSHCheck">
-                True <input type="radio"  name="TSH_measured" value ="1" id="TrueTSHCheck">
+                False <input type="radio"  name="TSH_measured" value ="0" id="FalseTSHCheck" required = 'required'>
+                True <input type="radio"  name="TSH_measured" value ="1" id="TrueTSHCheck" required = 'required'>
         </td>
               
 
@@ -47,20 +49,20 @@
 
             <tr style="height:70px">
                 <td> <p> pregnant</p>
-                    False <input type="radio"  name="pregnant" value ="0">
-                    True <input type="radio"  name="pregnant" value="1"></td>
+                    False <input type="radio"  name="pregnant" value ="0" required = 'required'>
+                    True <input type="radio"  name="pregnant" value="1" required = 'required'></td>
                 <td><label class="label">TT4 measured :</label> <BR>              
-                    False <input type="radio"  name="TT4_measured" value ="0" id="FalseTT4Check">
-                    True <input type="radio"  name="TT4_measured"  value ="1" id="TrueTT4Check"></td>
+                    False <input type="radio"  name="TT4_measured" value ="0" id="FalseTT4Check" required = 'required'>
+                    True <input type="radio"  name="TT4_measured"  value ="1" id="TrueTT4Check" required = 'required'></td>
                 
   
               </tr>
               <tr style="height:70px">
                 <td><label class="label" >T4U measured :</label> <BR>  
-                    False <input type="radio"  name="T4U_measured" value ="0" id="FalseT4UCheck">
-                    True <input type="radio"  name="T4U_measured" value ="1" id="TrueT4UCheck"></td>
+                    False <input type="radio"  name="T4U_measured" value ="0" id="FalseT4UCheck" required = 'required'>
+                    True <input type="radio"  name="T4U_measured" value ="1" id="TrueT4UCheck" required = 'required'></td>
                 <td>       <label for="FTI" class="label" >FTI :</label> 
-                    <input type="text" class="text" name="FTI" id="FTI" placeholder="Enter FTI" > </td>
+                    <input type="text" class="text" name="FTI" id="FTI" placeholder="Enter FTI" required = 'required' > </td>
                 
   
               </tr>
@@ -69,11 +71,11 @@
               <tr style="height:70px">
                 <td>
                     <label class="label">FTI measured :</label><BR>      
-                    False <input type="radio"  name="FTI_measured" value ="0" id="FalseFTICheck">
-                    True <input type="radio"  name="FTI_measured"  value ="1" id="TrueFTICheck"></td>
+                    False <input type="radio"  name="FTI_measured" value ="0" id="FalseFTICheck" required = 'required'>
+                    True <input type="radio"  name="FTI_measured"  value ="1" id="TrueFTICheck" required = 'required'></td>
                 <td>   <label class="label" >I131 treatment  :</label><BR>  
-                    False <input type="radio"  name="I131" value ="0" >
-                    True <input type="radio"  name="I131" value ="1" ></td>
+                    False <input type="radio"  name="I131" value ="0" required = 'required' >
+                    True <input type="radio"  name="I131" value ="1" required = 'required'></td>
                 
   
               </tr>
@@ -81,13 +83,13 @@
 
               <tr style="height:70px">
                 <td><label class="label" >psych  :</label><BR>  
-                    False <input type="radio"  name="psych" value ="0" >
-                    True <input type="radio"  name="psych" value ="1" >
+                    False <input type="radio"  name="psych" value ="0" required = 'required'>
+                    True <input type="radio"  name="psych" value ="1" required = 'required'>
                 
                        </td>
                 <td><label class="label" >on thyroxine  :</label><BR>  
-                    False <input type="radio"  name="thyroxine" value ="0" >
-                    True <input type="radio"  name="thyroxine" value ="1" >
+                    False <input type="radio"  name="thyroxine" value ="0" required = 'required'>
+                    True <input type="radio"  name="thyroxine" value ="1" required = 'required'>
                 </td>
                 
   
@@ -97,8 +99,8 @@
 
               <tr style="height:70px">
                 <td>       <label class="label" >sick  :</label><BR>  
-                    False <input type="radio"  name="sick" value ="0" >
-                    True <input type="radio"  name="sick" value ="1" ></td>
+                    False <input type="radio"  name="sick" value ="0" required = 'required'>
+                    True <input type="radio"  name="sick" value ="1" required = 'required'></td>
                 <td>  <button type="submit" class="predictbtn">Predict</button></td>
                 
   
@@ -108,12 +110,10 @@
 
 
 
-        <!-- ['age', 'sex', 'TSH', 'TSH measured', 'pregnant', 'TT4 measured',
-        'T4U measured', 'FTI', 'FTI measured', 'I131 treatment', 'psych',
-        'on thyroxine', 'sick'] -->
+       
 
 
-        <h6>Created By: <b>@Ranjit Singh2022</b></h6>
+        <h6><u>Created By<b>@Ranjit Singh2022</b></u></h6>
     </center>
 	</form>
     
