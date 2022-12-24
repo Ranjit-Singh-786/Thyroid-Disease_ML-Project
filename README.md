@@ -18,15 +18,15 @@ pip install -r requirements.txt
 
 ### click on the prediction button to Detect the disease.
 
-<img src ="static/a1.png" width = "300" height = "300">
+<img src ="static/a1.png" width = "600" height = "400">
 
 ### fill out all the details in this form.
 
-<img src ="static/a2.png" width = "300" height = "300">
+<img src ="static/a2.png" width = "600" height = "400">
 
 ### finally you can see the Prediction.
 
-<img src ="static/a3.png" width = "300" height = "300">
+<img src ="static/a3.png" width = "3600" height = "400">
 
 ## Thank you 🌝
 
